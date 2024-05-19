@@ -91,7 +91,7 @@ const SideCart = ({ carts }) => {
           className="checkbox checkbox-xs rounded-none "
         />
         <h1 className="tracking-widest text-xs ">
-          I've read and agree to the{" "}
+        I&apos;ve read and agree to the{" "}
           <span className="underline">terms and conditions</span>,
           <span className="underline">refund policy</span> &{" "}
           <span className="underline">privacy policy</span>
