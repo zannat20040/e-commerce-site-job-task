@@ -1,9 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NavbarLayout from "@/Component/NavbarLayout";
-import FooterLayout from "@/Component/FooterLayout";
-import Head from "next/head";
-
+import NavbarLayout from "../Component/NavbarLayout";
+import FooterLayout from "../Component/FooterLayout";
 
 export const metadata = {
   title: "Figma to NextJS",
@@ -13,16 +11,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <style>
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+          {`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');`}
         </style>
-      </Head>
-      <body><div className="overflow-x-hidden">
-        <NavbarLayout />
-        <main>{children}</main>
-        <FooterLayout />
-      </div></body>
+      </head>
+      <body>
+        <div className="overflow-x-hidden">
+          <NavbarLayout />
+          <main>{children}</main>
+          <FooterLayout />
+        </div>
+      </body>
     </html>
   );
 }
