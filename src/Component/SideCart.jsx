@@ -40,7 +40,7 @@ const SideCart = ({ carts }) => {
 
       <div className="my-5 flex flex-col gap-5">
         {carts?.length>0 && carts?.map((product) => (
-          <div className="card card-side border rounded-md bg-[#F7F8F8] items-center grid grid-cols-3">
+          <div key={product?.id} className="card card-side border rounded-md bg-[#F7F8F8] items-center grid grid-cols-3">
             <figure className="bg-white p-3 h-full">
               {" "}
               <Image

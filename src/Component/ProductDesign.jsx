@@ -66,8 +66,8 @@ const ProductDesign = ({
           layout === "grid" ? "grid grid-cols-2 lg:grid-cols-3" : "flex flex-col w-full"
         } gap-3 justify-between`}
       >
-        {currentProducts.map((product) => (
-          <div
+        {currentProducts?.map((product) => (
+          <div key={product.id}
             className={` ${
               layout === "grid" ? "card" : "grid grid-cols-8 "
             }   border rounded-md`}
