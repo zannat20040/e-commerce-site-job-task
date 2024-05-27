@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
 
-const SideCart = ({ carts }) => {
+const SideCart = ({ carts ,setCarts}) => {
   const splitTitle = (str, num) => {
     if (str.length <= num) {
       return str;
@@ -32,6 +32,12 @@ const SideCart = ({ carts }) => {
 
   const totalPrice = carts?.reduce((total, product) => total + product.price, 0).toFixed(2);
 
+
+  const HandleDelete = (id)=>{
+    const updatedCarts = carts.filter((product) => product.id !== id);
+    setCarts(updatedCarts);
+    localStorage.setItem("carts", JSON.stringify(updatedCarts));
+  }
   return (
     <div className="border rounded-md p-2 h-fit border-gray-600 hidden lg:flex lg:flex-col xl:col-span-2 ">
       <button className="w-full btn uppercase tracking-widest inter-font  bg-black py-[6px]  px-3  text-white  text-xs font-bold">
@@ -69,7 +75,7 @@ const SideCart = ({ carts }) => {
                   </h1>
                  
                 </div>
-                <button
+                <button onClick={()=>HandleDelete(product.id)}
                  
                     className=" bg-transparent text-[#F2415A] border-0 font-normal p-0 text-2xl"
                   >

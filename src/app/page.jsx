@@ -25,7 +25,6 @@ export default function Home() {
     setCurrentPage(pageNumber);
   };
 
-  console.log(carts);
 
   return (
     <main className=" mx-auto px-5 py-16">
@@ -67,7 +66,7 @@ export default function Home() {
             setCarts={setCarts}
             carts={carts}
           />
-          <SideCart carts={carts}/>
+          <SideCart carts={carts} setCarts={setCarts}/>
         </div>
         <Pagination
           currentPage={currentPage}
